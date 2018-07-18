@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Picker, Button, SectionList, Image } from 'react-native';
+import { StyleSheet, Text, View, Picker, Button, SectionList, Image, AlertIOS } from 'react-native';
 import FadeInView from './FadeInView';
 
 export default class App extends React.Component {
@@ -8,6 +8,13 @@ export default class App extends React.Component {
 
 
   render() {
+    
+    const AlertExample = () => {
+    AlertIOS.alert(
+      'Sync Complete',
+      'All your data are belong to us.'
+     );
+    }
 
     return (
       <View style={styles.container}>
@@ -19,7 +26,7 @@ export default class App extends React.Component {
           <Picker.Item label="Even More Tacos" value="js" />
         </Picker> */}
         <Button
-          // onPress={}
+          onPress={AlertExample}
           title="Push For Tacos"
           color="#841584"
           accessibilityLabel="Learn more about this purple button"
